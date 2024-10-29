@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" href="cv.css">
+</head>
+<body>
+    <div class="container">
+        <div class="resume-box">
+            <div class="resume-content">
+                <div class="left-side">
+                    <div class="profile-section">
+                        <img src="" alt="Profile Picture" class="profile-pic" id="profile-pic">
+                        <h2 id="name"></h2>
+                    </div>
+                    <div class="info-section">
+                        <h3>Personal Information</h3>
+                        <p><strong>Email:</strong> <span id="email"></span></p>
+                        <p><strong>Phone No:</strong> <span id="phoneNumber"></span></p>
+                    </div>
+                    <div class="education-section">
+                        <h3>Education</h3>
+                        <p id="education"></p>
+                    </div>
+                </div>
+                <div class="right-side">
+                    <div class="journey-section">
+                        <h3>Your Journey</h3>
+                        <p id="journey"></p>
+                    </div>
+                    <div class="skills-section">
+                        <h3>Technical Skills</h3>
+                        <p id="technicalSkills"></p>
+                        <h3>Soft Skills</h3>
+                        <p id="softSkills"></p>
+                    </div>
+                    <div class="hobbies-section">
+                        <h3>Interests</h3>
+                        <p id="hobbies"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const resumeData = JSON.parse(localStorage.getItem('resumeData'));
+        if (resumeData) {
+            document.getElementById('profile-pic').src = resumeData.profilePic;
+            document.getElementById('name').textContent = resumeData.name;
+            document.getElementById('email').textContent = resumeData.email;
+            document.getElementById('phoneNumber').textContent = resumeData.phoneNumber;
+            document.getElementById('journey').textContent = resumeData.journey;
+            document.getElementById('education').textContent = resumeData.education;
+            document.getElementById('technicalSkills').textContent = JSON.parse(resumeData.technicalSkills).join(', ');
+            document.getElementById('softSkills').textContent = JSON.parse(resumeData.softSkills).join(', ');
+            document.getElementById('hobbies').textContent = resumeData.hobbies || 'Not specified';
+        } else {
+            document.querySelector('.resume-content').innerHTML = '<p>No resume data found.</p>';
+        }
+    </script>
+</body>
+</html>

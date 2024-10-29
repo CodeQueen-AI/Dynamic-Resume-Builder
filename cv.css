@@ -1,0 +1,66 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+    max-width: 900px;
+    width: 100%;
+    padding: 20px;
+}
+.resume-box {
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.resume-content {
+    display: flex;
+}
+.left-side {
+    background-color: #09437d;
+    color: white;
+    padding: 20px;
+    width: 30%;
+    box-sizing: border-box;
+    border-radius: 10px 0 0 10px;
+}
+.right-side {
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 20px;
+    width: 70%;
+    box-sizing: border-box;
+    border-radius: 0 10px 10px 0;
+}
+.profile-section {
+    text-align: center;
+}
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover;
+    border: 3px solid #fff;
+}
+.info-section, .education-section, .journey-section, .skills-section, .hobbies-section {
+    margin-bottom: 20px;
+}
+h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+h3 {
+    font-size: 1.2em;
+    margin-top: 0;
+}
+p {
+    font-size: 1em;
+    margin: 5px 0;
+} 
